@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.0 on win32)" generated="2026-06-09T22:03:29.360353" rpa="false" schemaversion="5">
+<suite id="s1" name="LoginScenario" source="C:\Users\ponavgha\OneDrive - Capgemini\Desktop\Task\RobotFramework\project-folder\Tests\Web\scenarios\LoginScenario.robot">
+<test id="s1-t1" name="Positive Login Scenario" line="6">
+<kw name="Given the OrangeHRM login page is open" owner="Support">
+<kw name="Open Login Page" owner="BusinessLogic">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-09T22:03:29.823366" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-09T22:03:29.823083" elapsed="9.303515"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-09T22:03:39.127516" elapsed="0.039039"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-09T22:03:39.167102" elapsed="1.636047"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:29.822799" elapsed="10.980690"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:29.822272" elapsed="10.981349"/>
+</kw>
+<kw name="When the user logs in with valid credentials" owner="Support">
+<kw name="Input Username" owner="BusinessLogic">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-09T22:03:40.805707" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T22:03:40.805352" elapsed="0.257501"/>
+</kw>
+<arg>${VALID_USERNAME}</arg>
+<status status="PASS" start="2026-06-09T22:03:40.805031" elapsed="0.258197"/>
+</kw>
+<kw name="Input Password" owner="BusinessLogic">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-09T22:03:41.068143" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@name='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T22:03:41.067310" elapsed="0.249691"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2026-06-09T22:03:41.065968" elapsed="0.251217"/>
+</kw>
+<kw name="Click Login Button" owner="BusinessLogic">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-09T22:03:41.317981" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T22:03:41.317754" elapsed="0.105397"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:41.317440" elapsed="0.105909"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:40.804515" elapsed="0.618910"/>
+</kw>
+<kw name="Then the user should see the dashboard page" owner="Support">
+<kw name="Verify Login Successful" owner="BusinessLogic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DASHBOARD_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-09T22:03:41.424614" elapsed="1.766255"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-09T22:03:43.218646" level="INFO">Element 'xpath=//h6[text()='Dashboard']' is displayed.</msg>
+<arg>${DASHBOARD_TEXT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-09T22:03:43.191218" elapsed="0.027633"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:41.424397" elapsed="1.794629"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:41.424044" elapsed="1.795048"/>
+</kw>
+<kw name="Close Browser Session" owner="BusinessLogic" type="TEARDOWN">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-09T22:03:43.221034" elapsed="2.557485"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-06-09T22:03:43.220401" elapsed="2.558334"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:43.219925" elapsed="2.559078"/>
+</kw>
+<doc>Verify that user can login with valid credentials</doc>
+<status status="PASS" start="2026-06-09T22:03:29.820480" elapsed="15.958912"/>
+</test>
+<test id="s1-t2" name="Negative Login Scenario" line="14">
+<kw name="Given the OrangeHRM login page is open" owner="Support">
+<kw name="Open Login Page" owner="BusinessLogic">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-09T22:03:45.782002" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-09T22:03:45.781717" elapsed="8.958826"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-09T22:03:54.740899" elapsed="0.048572"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-09T22:03:54.790006" elapsed="1.321312"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:45.781459" elapsed="10.330269"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:45.781124" elapsed="10.330750"/>
+</kw>
+<kw name="When the user logs in with invalid credentials" owner="Support">
+<kw name="Input Username" owner="BusinessLogic">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-09T22:03:56.115136" level="INFO">Typing text 'wronguser' into text field 'xpath=//input[@name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T22:03:56.114652" elapsed="0.148442"/>
+</kw>
+<arg>${INVALID_USERNAME}</arg>
+<status status="PASS" start="2026-06-09T22:03:56.114091" elapsed="0.149260"/>
+</kw>
+<kw name="Input Password" owner="BusinessLogic">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-09T22:03:56.264930" level="INFO">Typing text 'wrongpass' into text field 'xpath=//input[@name='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T22:03:56.264521" elapsed="0.159034"/>
+</kw>
+<arg>${INVALID_PASSWORD}</arg>
+<status status="PASS" start="2026-06-09T22:03:56.263840" elapsed="0.159990"/>
+</kw>
+<kw name="Click Login Button" owner="BusinessLogic">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-09T22:03:56.424989" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-09T22:03:56.424646" elapsed="0.149210"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:56.424188" elapsed="0.149922"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:56.113464" elapsed="0.460735"/>
+</kw>
+<kw name="Then the user should see login failure message" owner="Support">
+<kw name="Verify Login Failure Message" owner="BusinessLogic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERROR_MESSAGE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-09T22:03:56.575587" elapsed="1.560353"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-09T22:03:58.161194" level="INFO">Element 'xpath=//p[contains(@class,'alert-content-text')]' contains text 'Invalid credentials'.</msg>
+<arg>${ERROR_MESSAGE}</arg>
+<arg>Invalid credentials</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-09T22:03:58.136314" elapsed="0.025046"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:56.575340" elapsed="1.586204"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:56.574946" elapsed="1.586657"/>
+</kw>
+<kw name="Close Browser Session" owner="BusinessLogic" type="TEARDOWN">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-09T22:03:58.163416" elapsed="2.447375"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-06-09T22:03:58.162846" elapsed="2.448200"/>
+</kw>
+<status status="PASS" start="2026-06-09T22:03:58.162341" elapsed="2.448828"/>
+</kw>
+<doc>Verify invalid credentials show error message</doc>
+<status status="PASS" start="2026-06-09T22:03:45.780367" elapsed="14.831251"/>
+</test>
+<status status="PASS" start="2026-06-09T22:03:29.366942" elapsed="31.246054"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="LoginScenario" id="s1" pass="2" fail="0" skip="0">LoginScenario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

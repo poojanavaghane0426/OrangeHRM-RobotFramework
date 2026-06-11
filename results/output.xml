@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.0 on win32)" generated="2026-06-10T15:02:40.524474" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotFramework" source="C:\Users\ponavgha\OneDrive - Capgemini\Desktop\Task\RobotFramework">
+<suite id="s1-s1" name="Project-Folder" source="C:\Users\ponavgha\OneDrive - Capgemini\Desktop\Task\RobotFramework\project-folder">
+<suite id="s1-s1-s1" name="Tests" source="C:\Users\ponavgha\OneDrive - Capgemini\Desktop\Task\RobotFramework\project-folder\Tests">
+<suite id="s1-s1-s1-s1" name="Web" source="C:\Users\ponavgha\OneDrive - Capgemini\Desktop\Task\RobotFramework\project-folder\Tests\Web">
+<suite id="s1-s1-s1-s1-s1" name="Scenarios" source="C:\Users\ponavgha\OneDrive - Capgemini\Desktop\Task\RobotFramework\project-folder\Tests\Web\scenarios">
+<suite id="s1-s1-s1-s1-s1-s1" name="Create AddEmployeeScenario" source="C:\Users\ponavgha\OneDrive - Capgemini\Desktop\Task\RobotFramework\project-folder\Tests\Web\scenarios\Create AddEmployeeScenario.robot">
+<test id="s1-s1-s1-s1-s1-s1-t1" name="Add Employee Scenario" line="6">
+<kw name="Given the OrangeHRM login page is open" owner="Support">
+<kw name="Open Login Page" owner="BusinessLogic">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-10T15:02:41.161367" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-10T15:02:41.160876" elapsed="12.937143"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-10T15:02:54.099129" elapsed="0.043346"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:02:54.143394" elapsed="1.149317"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:02:41.160339" elapsed="14.132991"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:02:41.159268" elapsed="14.134292"/>
+</kw>
+<kw name="When the user logs in with valid credentials" owner="Support">
+<kw name="Input Username" owner="BusinessLogic">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T15:02:55.297327" level="INFO">Typing text 'Admin' into text field '//input[@name='username']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:02:55.296823" elapsed="0.149886"/>
+</kw>
+<arg>${VALID_USERNAME}</arg>
+<status status="PASS" start="2026-06-10T15:02:55.296203" elapsed="0.151265"/>
+</kw>
+<kw name="Input Password" owner="BusinessLogic">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T15:02:55.451129" level="INFO">Typing text 'admin123' into text field '//input[@name='password']'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:02:55.450000" elapsed="0.161165"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2026-06-10T15:02:55.448237" elapsed="0.163594"/>
+</kw>
+<kw name="Click Login Button" owner="BusinessLogic">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-10T15:02:55.613906" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:02:55.613197" elapsed="0.173587"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:02:55.612295" elapsed="0.174979"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:02:55.294568" elapsed="0.492872"/>
+</kw>
+<kw name="And the user navigates to PIM module" owner="Support">
+<kw name="Navigate To PIM Module" owner="BusinessLogic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PIM_MENU}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:02:55.790126" elapsed="1.529601"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-10T15:02:57.320584" level="INFO">Clicking element '//span[text()='PIM']'.</msg>
+<arg>${PIM_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:02:57.320068" elapsed="1.558240"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:02:55.789374" elapsed="3.089192"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:02:55.788384" elapsed="3.090291"/>
+</kw>
+<kw name="And the user clicks add employee button" owner="Support">
+<kw name="Click Add Employee Button" owner="BusinessLogic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_EMPLOYEE_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:02:58.880131" elapsed="0.516363"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-10T15:02:59.397576" level="INFO">Clicking element '//a[text()='Add Employee']'.</msg>
+<arg>${ADD_EMPLOYEE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:02:59.396882" elapsed="0.764688"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:02:58.879788" elapsed="1.282266"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:02:58.879229" elapsed="1.283022"/>
+</kw>
+<kw name="When the user enters employee details" owner="Support">
+<kw name="Enter Employee Details" owner="BusinessLogic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_NAME_FIELD}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:03:00.164163" elapsed="1.094813"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T15:03:01.260272" level="INFO">Typing text 'Pooja' into text field '//input[@name='firstName']'.</msg>
+<arg>${FIRST_NAME_FIELD}</arg>
+<arg>${EMPLOYEE_FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:03:01.259398" elapsed="0.110479"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-10T15:03:01.370929" level="INFO">Typing text 'Navghane' into text field '//input[@name='lastName']'.</msg>
+<arg>${LAST_NAME_FIELD}</arg>
+<arg>${EMPLOYEE_LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:03:01.370305" elapsed="0.127842"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:03:00.163774" elapsed="1.334687"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:03:00.163056" elapsed="1.335556"/>
+</kw>
+<kw name="And the user clicks save button" owner="Support">
+<kw name="Click Save Button" owner="BusinessLogic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SAVE_BUTTON}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:03:01.500171" elapsed="0.041341"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-10T15:03:03.542838" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-10T15:03:01.541833" elapsed="2.001800"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-10T15:03:03.544694" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${SAVE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-10T15:03:03.544011" elapsed="0.128289"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:03:01.499821" elapsed="2.172855"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:03:01.499247" elapsed="2.173657"/>
+</kw>
+<kw name="Then employee should be added successfully" owner="Support">
+<kw name="Verify Employee Added Successfully" owner="BusinessLogic">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PERSONAL_DETAILS_TEXT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:03:03.676043" elapsed="6.091529"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-10T15:03:09.789121" level="INFO">Element '//h6[text()='Personal Details']' is displayed.</msg>
+<arg>${PERSONAL_DETAILS_TEXT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-10T15:03:09.767905" elapsed="0.022098"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:03:03.675440" elapsed="6.114905"/>
+</kw>
+<status status="PASS" start="2026-06-10T15:03:03.673981" elapsed="6.116534"/>
+</kw>
+<doc>Verify user can add employee successfully</doc>
+<status status="PASS" start="2026-06-10T15:02:41.146068" elapsed="28.644958"/>
+</test>
+<status status="PASS" start="2026-06-10T15:02:40.668606" elapsed="29.129303"/>
+</suite>
+<status status="PASS" start="2026-06-10T15:02:40.660719" elapsed="29.142858"/>
+</suite>
+<status status="PASS" start="2026-06-10T15:02:40.653771" elapsed="29.155174"/>
+</suite>
+<status status="PASS" start="2026-06-10T15:02:40.647337" elapsed="29.176746"/>
+</suite>
+<status status="PASS" start="2026-06-10T15:02:40.638896" elapsed="29.200470"/>
+</suite>
+<status status="PASS" start="2026-06-10T15:02:40.538070" elapsed="29.309567"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RobotFramework" id="s1" pass="1" fail="0" skip="0">RobotFramework</stat>
+<stat name="Project-Folder" id="s1-s1" pass="1" fail="0" skip="0">RobotFramework.Project-Folder</stat>
+<stat name="Tests" id="s1-s1-s1" pass="1" fail="0" skip="0">RobotFramework.Project-Folder.Tests</stat>
+<stat name="Web" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">RobotFramework.Project-Folder.Tests.Web</stat>
+<stat name="Scenarios" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">RobotFramework.Project-Folder.Tests.Web.Scenarios</stat>
+<stat name="Create AddEmployeeScenario" id="s1-s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">RobotFramework.Project-Folder.Tests.Web.Scenarios.Create AddEmployeeScenario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
