@@ -1,7 +1,6 @@
 *** Settings ***
 Resource    ../support/Support.robot
 
-
 *** Test Cases ***
 Positive Login Scenario
     [Documentation]    Verify that user can login with valid credentials
