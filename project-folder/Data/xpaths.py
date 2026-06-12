@@ -18,9 +18,13 @@ FIRST_NAME_FIELD = "//input[@name='firstName']"
 LAST_NAME_FIELD = "//input[@name='lastName']"
 SAVE_BUTTON = "//button[@type='submit']"
 PERSONAL_DETAILS_TEXT = "//h6[text()='Personal Details']"
-LOADER = "xpath=//div[@class='oxd-form-loader']"
+LOADER = "xpath=//div[contains(@class,'oxd-form-loader')]"
 
 
-EMPLOYEE_NAME_SEARCH = "(//input[@placeholder='Type for hints...'])[1]"
+
+EMPLOYEE_NAME_SEARCH = "//input[@placeholder='Type for hints...']"
 SEARCH_BUTTON = "//button[@type='submit']"
-EMPLOYEE_RECORD = "//div[@class='oxd-table-body']"
+EMPLOYEE_RECORD = "//div[@role='table']"
+
+DASHBOARD_TEXT = "xpath=//h6[text()='Dashboard']"
+PROFILE_DROPDOWN = "xpath=//span[contains(@class,'userdropdown-tab')]"

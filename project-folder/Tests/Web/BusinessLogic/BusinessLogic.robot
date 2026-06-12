@@ -6,7 +6,6 @@ Variables    ../../../Data/xpaths.py
 
 *** Keywords ***
 
-# ---------- LOGIN FLOW ----------
 
 Open Login Page
     Open Browser    ${LOGIN_URL}    ${BROWSER}
@@ -31,7 +30,6 @@ Verify Login Failure Message
     Element Should Contain    ${ERROR_MESSAGE}    ${INVALID_CREDENTIALS_TEXT}
 
 
-# ---------- LOGOUT FLOW ----------
 
 Perform Logout
     Wait Until Element Is Visible    ${PROFILE_DROPDOWN}    ${EXPLICIT_WAIT}
@@ -44,7 +42,7 @@ Verify Logout Successful
     Wait Until Element Is Visible    ${LOGIN_PAGE_TEXT}    ${EXPLICIT_WAIT}
 
 
-# ---------- PIM / ADD EMPLOYEE ----------
+
 
 Add Employee
     Wait Until Element Is Visible    ${PIM_MENU}    ${EXPLICIT_WAIT}
@@ -67,12 +65,21 @@ Verify Employee Added
     Wait Until Element Is Visible    ${PERSONAL_DETAILS_TEXT}    ${EXPLICIT_WAIT}
 
 
-# ---------- SEARCH EMPLOYEE ----------
+
 
 Search Employee
-    Wait Until Element Is Visible    ${EMPLOYEE_NAME_SEARCH}    ${EXPLICIT_WAIT}
-    Input Text    ${EMPLOYEE_NAME_SEARCH}    ${SEARCH_EMPLOYEE_NAME}
+    Wait Until Element Is Visible    ${PIM_MENU}    ${EXPLICIT_WAIT}
+    Click Element    ${PIM_MENU}
 
+    Wait Until Element Is Visible    ${EMPLOYEE_NAME_SEARCH}    ${EXPLICIT_WAIT}
+        Scroll Element Into View         ${EMPLOYEE_NAME_SEARCH}
+
+    Wait Until Element Is Visible    ${SEARCH_BUTTON}    ${EXPLICIT_WAIT}
+    Click Button    ${SEARCH_BUTTON}
+    Input Text    ${EMPLOYEE_NAME_SEARCH}    ${SEARCH_EMPLOYEE_NAME}
+    Sleep    2s
+
+    
     Wait Until Element Is Visible    ${SEARCH_BUTTON}    ${EXPLICIT_WAIT}
     Click Button    ${SEARCH_BUTTON}
 
@@ -80,7 +87,6 @@ Verify Employee Found
     Wait Until Element Is Visible    ${EMPLOYEE_RECORD}    ${EXPLICIT_WAIT}
 
 
-# ---------- COMMON ----------
 
 Close Browser Session
     Run Keyword And Ignore Error    Close Browser
